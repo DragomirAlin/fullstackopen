@@ -1,6 +1,6 @@
-import React from 'react'
 import CV from './CV'
 import Store from "./Store";
+import React, {useState} from 'react'
 
 const Hello = (props) => {
     const {name, age} = props;
@@ -13,7 +13,7 @@ const Hello = (props) => {
     }
 
     const buildCV = ({name, age}) => {
-    return "CV " + name + " - " + age;
+        return "CV " + name + " - " + age;
     }
 
     return (
@@ -34,10 +34,21 @@ const Hello = (props) => {
 
 
 const App = (props) => {
-    var products = ["cartofi prajiti", "carnati", "suc"]
+    const [counter, setCounter] = useState(0)
+
+    setTimeout(
+        () => setCounter(counter + 1),
+        1000
+    )
+    console.log('rendering...', counter)
+
+
     return (
         <div>
-            <Store menuList={products} />
+            {counter}
+
+            <div>Hello World</div>
+
         </div>
     )
 }
