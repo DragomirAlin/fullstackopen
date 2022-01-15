@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let counter = 12;
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App counter={counter}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
